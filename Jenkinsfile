@@ -9,13 +9,13 @@ pipeline{
     stages{
         stage('install dependencies'){
             steps{
-                sh 'pip install -target=$PIP_TARGET -r requirements.txt'
+                sh 'python3 -m pip install -target=$PIP_TARGET -r requirements.txt'
             }
         }
 
         stage('Run Test'){
             steps{
-                sh 'pytest test.py'
+                sh 'python3 -m pytest test.py'
             }
         }
     }
