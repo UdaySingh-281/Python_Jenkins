@@ -3,11 +3,15 @@ pipeline{
 
     stages{
         stage('install dependencies'){
-            sh 'pip install -r requirements.txt'
+            steps{
+                sh 'pip install -r requirements.txt'
+            }
         }
 
         stage('Run Test'){
-            sh 'pytest test.py'
+            steps{
+                sh 'pytest test.py'
+            }
         }
     }
 }
